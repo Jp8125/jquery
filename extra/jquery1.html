@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>first</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1 id="id1"></h1>
+    <button id="btn">click</button>
+    <div class="email">
+        <p id="first">this is p</p>
+    </div>
+    <script>
+       $(document).ready(
+        $("#id1").html("this is the first jquery example"),
+       $('#btn').click(function() {
+        alert("button clicked")
+    }));
+       var email=$(".email");
+       gerpera(email)
+       function gerpera(e)
+       {
+        var c1=e.find("#first");
+        console.log(c1.html())
+       }
+
+    </script>
+</body>
+</html>

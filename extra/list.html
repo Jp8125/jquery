@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dynamic-list</title>
+  </head>
+  <body>
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+        $(document).ready(function() {
+           const list = [
+        { pid: 1, name: "Entertainment", parentid: null },
+        { pid: 2, name: "Food", parentid: null },
+        { pid: 3, name: "television", parentid: 1 },
+        { pid: 4, name: "tea", parentid: 2 },
+        { pid: 5, name: "radio", parentid:1 },
+        { pid: 6, name: "ps5", parentid:1 }
+      ];
+      
+      var outerlist=[]=list.filter((obj)=>obj.parentid==null)
+      var o_ul=$("<ul></ul>");
+      $(outerlist).each((index, obj)=>{
+        o_ul.append($("<li></li>").text(obj.name).attr("id",index+1));
+      })
+      o_ul.appendTo('body');
+                    $(list).each((index, obj)=>{
+                        if(obj.parentid==1){
+                        $('#1').append($("<ul></ul>").append($("<li></li>").text(obj.name)));
+                       
+                        }
+                  })
+                  $(list).each((index, obj)=>{
+                        if(obj.parentid==2){
+                        $('#2').append($("<ul></ul>").append($("<li></li>").text(obj.name)));
+                       
+                        }
+                  })
+        })
+    </script>
+  </body>
+</html>
